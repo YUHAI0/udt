@@ -499,6 +499,7 @@ UDTSTATUS CUDTUnited::getStatus(const UDTSOCKET u)
 
 int CUDTUnited::bind(const UDTSOCKET u, const sockaddr* name, int namelen)
 {
+   printf("Bind %s\n", name->sa_data);
    CUDTSocket* s = locate(u);
    if (NULL == s)
       throw CUDTException(5, 4, 0);
@@ -727,6 +728,7 @@ UDTSOCKET CUDTUnited::accept(const UDTSOCKET listen, sockaddr* addr, int* addrle
 
 int CUDTUnited::connect(const UDTSOCKET u, const sockaddr* name, int namelen)
 {
+   printf("Connect to %s\n", name->sa_data);
    CUDTSocket* s = locate(u);
    if (NULL == s)
       throw CUDTException(5, 4, 0);

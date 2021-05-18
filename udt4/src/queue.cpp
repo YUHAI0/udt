@@ -521,6 +521,7 @@ void CSndQueue::init(CChannel* c, CTimer* t)
    while (!self->m_bClosing)
    {
       uint64_t ts = self->m_pSndUList->getNextProcTime();
+      printf("Next proc: %d\n", ts);
 
       if (ts > 0)
       {

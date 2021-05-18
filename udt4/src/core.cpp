@@ -563,7 +563,7 @@ void CUDT::listen()
    // if there is already another socket listening on the same port
    if (m_pRcvQueue->setListener(this) < 0)
       throw CUDTException(5, 11, 0);
-
+   
    m_bListening = true;
 }
 

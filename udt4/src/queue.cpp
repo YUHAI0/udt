@@ -525,19 +525,21 @@ void CSndQueue::init(CChannel* c, CTimer* t)
 
       if (ts > 0)
       {
+         continue;
+         printf("continue.");
          // wait until next processing time of the first socket on the list
-         uint64_t currtime;
-         CTimer::rdtsc(currtime);
-         if (currtime < ts)
-            self->m_pTimer->sleepto(ts);
+         //uint64_t currtime;
+         //CTimer::rdtsc(currtime);
+         //if (currtime < ts)
+         //   self->m_pTimer->sleepto(ts);
 
-         // it is time to send the next pkt
-         sockaddr* addr;
-         CPacket pkt;
-         if (self->m_pSndUList->pop(addr, pkt) < 0)
-            continue;
+         //// it is time to send the next pkt
+         //sockaddr* addr;
+         //CPacket pkt;
+         //if (self->m_pSndUList->pop(addr, pkt) < 0)
+         //   continue;
 
-         self->m_pChannel->sendto(addr, pkt);
+         //self->m_pChannel->sendto(addr, pkt);
       }
       else
       {
